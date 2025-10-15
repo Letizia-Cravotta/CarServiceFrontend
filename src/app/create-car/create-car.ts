@@ -11,7 +11,7 @@ import {FormsModule} from '@angular/forms';
   styleUrls: ['./create-car.css']
 })
 export class CreateCar {
-  car: Car = {carId: 22, numberOfWheels: 4, color: 'green', brand: 'Toyota'};
+  car: Car = {numberOfWheels: 4, color: 'green', brand: 'Toyota'};
 
   constructor(private apiService: ApiService) {
   }

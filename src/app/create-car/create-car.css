@@ -1,0 +1,106 @@
+/* Add a subtle gradient to the page background */
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding-top: 40px; /* Ensure content isn't stuck at the top */
+}
+
+/* General container for the form to create a centered, "glassmorphism" card effect */
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 2.5rem; /* Slightly more padding */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border-radius: 20px; /* More rounded corners */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); /* Softer, more pronounced shadow */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.5s ease-out; /* Add a fade-in animation */
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styling for the main heading of the form */
+.form-container h3 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #2c3e50; /* A deeper, more professional color */
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -1px; /* Tighter letter spacing */
+}
+
+/* Styles for each group of label and input to ensure proper spacing */
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative; /* Needed for potential future icon additions */
+}
+
+/* Styling for the labels to make them clear and readable */
+.form-group label {
+  display: block;
+  font-weight: 600; /* Bolder label */
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+/* General styling for all text and number input fields */
+.form-group input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #dfe6e9; /* Slightly thicker, subtle border */
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #2c3e50;
+  background-color: #fdfdfd;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Smoother transition for all properties */
+}
+
+/* Style for when an input field is focused (clicked on) */
+.form-group input:focus {
+  outline: none;
+  border-color: #8e44ad; /* A fancy purple color */
+  box-shadow: 0 0 0 4px rgba(142, 68, 173, 0.15);
+  background-color: #fff;
+}
+
+/* Styling for the submit button with a gradient */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background-image: linear-gradient(to right, #8e44ad 0%, #9b59b6 50%, #8e44ad 100%);
+  background-size: 200% auto; /* For the hover effect */
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease; /* Slower, smoother transition */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Style for when the user hovers over the button */
+.submit-btn:hover {
+  background-position: right center; /* Change the gradient's direction */
+  box-shadow: 0 8px 16px rgba(142, 68, 173, 0.25);
+  transform: translateY(-2px); /* Lift the button slightly */
+}
+
+/* A subtle effect for when the button is actively being clicked */
+.submit-btn:active {
+  transform: translateY(0px); /* Push the button back down */
+  box-shadow: 0 4px 8px rgba(142, 68, 173, 0.2);
+}

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 // An interface matching the structure of the JSON data from the backend
 export interface Car {
-  carId: number;
+  carId?: number;
   numberOfWheels: number;
   color: string;
   brand: string;
