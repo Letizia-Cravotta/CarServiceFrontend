@@ -1,11 +1,1 @@
-<h1>{{ title }}</h1>
-
-<h2>Cars from the backend:</h2>
-
-<ul>
-  @for (car of backendCars(); track car.carId) {
-    <li>{{ car.brand }} - {{ car.color }} - {{ car.numberOfWheels }} wheels</li>
-  } @empty {
-    <li>Loading cars or none available...</li>
-  }
-</ul>
+<car-viewer></car-viewer>
