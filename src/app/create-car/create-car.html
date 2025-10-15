@@ -1,0 +1,16 @@
+<h3>Add a New Car</h3>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" [(ngModel)]="car.brand" name="brand" required>
+  </div>
+  <div>
+    <label for="color">Color:</label>
+    <input type="text" id="color" [(ngModel)]="car.color" name="color" required>
+  </div>
+  <div>
+    <label for="numberOfWheels">Number of Wheels:</label>
+    <input type="number" id="numberOfWheels" [(ngModel)]="car.numberOfWheels" name="numberOfWheels" required>
+  </div>
+  <button type="submit">Add Car</button>
+</form>

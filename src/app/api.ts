@@ -21,4 +21,8 @@ export class ApiService {
   getAllCars(): Observable<Car[]> {
     return this.http.get<Car[]>(this.backendUrl);
   }
+
+  createCar(car: Car): Observable<Object> {
+    return this.http.post<Object>(this.backendUrl, car);
+  }
 }
