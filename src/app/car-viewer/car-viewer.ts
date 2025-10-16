@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {toSignal} from '@angular/core/rxjs-interop';
-import {ApiService} from '../api'; // The Message interface is now imported from the service
+import {ApiService, Car} from '../api'; // The Message interface is now imported from the service
 import {Subject, startWith, switchMap} from 'rxjs';
 
 @Component({
@@ -28,5 +28,16 @@ export class CarViewer {
 
   refreshCars(): void {
     this.refresh$.next();
+  }
+
+  deleteCar(id: number): void {
+    this.apiService.deleteCar(id).subscribe({
+      next: (deletedCar: Car) => {
+        console.log(`Car with id ${id} deleted successfully`);
+        this.refreshCars(); // Refresh the car list after deletion
+      },
+      error: (err) => console.error('Error deleting car:', err)
+    });
+
   }
 }

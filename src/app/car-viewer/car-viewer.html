@@ -4,7 +4,16 @@
 
 <ul>
   @for (car of backendCars(); track car.carId) {
-    <li>{{ car.brand }} - {{ car.color }} - {{ car.numberOfWheels }} wheels</li>
+    <li>
+      <span>{{ car.brand }} - {{ car.color }} - {{ car.numberOfWheels }} wheels</span>
+      <img
+      src="icons/trash-can.png"
+      alt="Delete car"
+      (click)="deleteCar(car.carId!)"
+      class="delete-icon"
+      />
+
+    </li>
   } @empty {
     <li>Loading cars or none available...</li>
   }

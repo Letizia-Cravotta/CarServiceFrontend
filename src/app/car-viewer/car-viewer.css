@@ -50,7 +50,11 @@ li {
   color: #333;
   font-size: 1.1rem;
   font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 
 /* A subtle hover effect to make the list interactive */
 li:hover {
@@ -65,4 +69,15 @@ ul:empty + li, li:only-child {
   color: #7f8c8d;
   text-align: center;
   font-style: italic;
+}
+
+.delete-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.delete-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }

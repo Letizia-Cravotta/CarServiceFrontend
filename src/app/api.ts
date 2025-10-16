@@ -25,4 +25,9 @@ export class ApiService {
   createCar(car: Car): Observable<Car> {
     return this.http.post<Car>(this.backendUrl, car, { responseType: 'json' });
   }
+
+  deleteCar(carId: number): Observable<Car> {
+    return this.http.delete<Car>(`${this.backendUrl}/id/${carId}`);
+  }
+
 }
