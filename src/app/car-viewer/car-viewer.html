@@ -6,15 +6,31 @@
   @for (car of backendCars(); track car.carId) {
     <li>
       <span>{{ car.brand }} - {{ car.color }} - {{ car.numberOfWheels }} wheels</span>
-      <img
-      src="icons/trash-can.png"
-      alt="Delete car"
-      (click)="deleteCar(car.carId!)"
-      class="delete-icon"
-      />
+      <div class="icon-container">
+        <img
+          src="icons/edit-icon.jpg"
+          alt="Edit car"
+          (click)="openEditModal(car)"
+          class="edit-icon"
+        />
+        <img
+          src="icons/trash-can.png"
+          alt="Delete car"
+          (click)="deleteCar(car.carId!)"
+          class="delete-icon"
+        />
+      </div>
 
     </li>
   } @empty {
     <li>Loading cars or none available...</li>
   }
 </ul>
+
+@if (isEditing) {
+  <car-editor
+    [car]="carToEdit"
+    (carUpdated)="handleCarUpdated()"
+    (close)="closeEditModal()">
+  </car-editor>
+}

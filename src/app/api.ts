@@ -23,11 +23,15 @@ export class ApiService {
   }
 
   createCar(car: Car): Observable<Car> {
-    return this.http.post<Car>(this.backendUrl, car, { responseType: 'json' });
+    return this.http.post<Car>(this.backendUrl, car);
   }
 
   deleteCar(carId: number): Observable<Car> {
     return this.http.delete<Car>(`${this.backendUrl}/id/${carId}`);
+  }
+
+  updateCar(car: Car): Observable<Car> {
+    return this.http.put<Car>(`${this.backendUrl}/id/${car.carId}`, car);
   }
 
 }
