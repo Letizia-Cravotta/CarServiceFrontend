@@ -1,105 +1,105 @@
-/*!* src/app/create-car/create-car.css *!*/
-/*:host {*/
-/*  flex: 1 1 350px; !* flex-grow, flex-shrink, flex-basis *!*/
-/*  max-width: 450px;*/
-/*}*/
+/* src/app/create-car/create-car.css */
+:host {
+  flex: 1 1 350px; /* flex-grow, flex-shrink, flex-basis */
+  max-width: 450px;
+}
 
-/*!* General container for the form to create a centered, "glassmorphism" card effect *!*/
-/*.form-container {*/
-/*  padding: 2.5rem;*/
-/*  background-color: rgba(255, 255, 255, 0.9);*/
-/*  backdrop-filter: blur(10px);*/
-/*  border-radius: 20px;*/
-/*  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);*/
-/*  border: 1px solid rgba(255, 255, 255, 0.2);*/
-/*  animation: fadeIn 0.5s ease-out;*/
-/*}*/
+/* General container for the form to create a centered, "glassmorphism" card effect */
+.form-container {
+  padding: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.5s ease-out;
+}
 
-/*!* Keyframes for the fade-in animation *!*/
-/*@keyframes fadeIn {*/
-/*  from {*/
-/*    opacity: 0;*/
-/*    transform: translateY(-20px);*/
-/*  }*/
-/*  to {*/
-/*    opacity: 1;*/
-/*    transform: translateY(0);*/
-/*  }*/
-/*}*/
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-/*!* Styling for the main heading of the form *!*/
-/*.form-container h3 {*/
-/*  text-align: center;*/
-/*  margin-top: 0;*/
-/*  margin-bottom: 2.5rem;*/
-/*  color: #2c3e50;*/
-/*  font-size: 2rem;*/
-/*  font-weight: 700;*/
-/*  letter-spacing: -1px;*/
-/*}*/
+/* Styling for the main heading of the form */
+.form-container h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
 
-/*!* Styles for each group of label and input to ensure proper spacing *!*/
-/*.form-group {*/
-/*  margin-bottom: 1.5rem;*/
-/*  position: relative;*/
-/*}*/
+/* Styles for each group of label and input to ensure proper spacing */
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
 
-/*!* Styling for the labels to make them clear and readable *!*/
-/*.form-group label {*/
-/*  display: block;*/
-/*  font-weight: 600;*/
-/*  color: #34495e;*/
-/*  margin-bottom: 0.5rem;*/
-/*}*/
+/* Styling for the labels to make them clear and readable */
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
 
-/*!* General styling for all text and number input fields *!*/
-/*.form-group input {*/
-/*  width: 100%;*/
-/*  padding: 14px 18px;*/
-/*  border: 2px solid #dfe6e9;*/
-/*  border-radius: 10px;*/
-/*  font-size: 1rem;*/
-/*  color: #2c3e50;*/
-/*  background-color: #fdfdfd;*/
-/*  box-sizing: border-box;*/
-/*  transition: all 0.3s ease;*/
-/*}*/
+/* General styling for all text and number input fields */
+.form-group input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #dfe6e9;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #2c3e50;
+  background-color: #fdfdfd;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
 
-/*!* Style for when an input field is focused (clicked on) *!*/
-/*.form-group input:focus {*/
-/*  outline: none;*/
-/*  border-color: #8e44ad;*/
-/*  box-shadow: 0 0 0 4px rgba(142, 68, 173, 0.15);*/
-/*  background-color: #fff;*/
-/*}*/
+/* Style for when an input field is focused (clicked on) */
+.form-group input:focus {
+  outline: none;
+  border-color: #8e44ad;
+  box-shadow: 0 0 0 4px rgba(142, 68, 173, 0.15);
+  background-color: #fff;
+}
 
-/*!* Styling for the submit button with a gradient *!*/
-/*.submit-btn {*/
-/*  width: 100%;*/
-/*  padding: 16px;*/
-/*  background-image: linear-gradient(to right, #8e44ad 0%, #9b59b6 50%, #8e44ad 100%);*/
-/*  background-size: 200% auto;*/
-/*  color: white;*/
-/*  font-size: 1.15rem;*/
-/*  font-weight: 700;*/
-/*  border: none;*/
-/*  border-radius: 10px;*/
-/*  cursor: pointer;*/
-/*  transition: all 0.4s ease;*/
-/*  text-transform: uppercase;*/
-/*  letter-spacing: 1px;*/
-/*  margin-top: 1rem;*/
-/*}*/
+/* Styling for the submit button with a gradient */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background-image: linear-gradient(to right, #8e44ad 0%, #9b59b6 50%, #8e44ad 100%);
+  background-size: 200% auto;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
 
-/*!* Style for when the user hovers over the button *!*/
-/*.submit-btn:hover {*/
-/*  background-position: right center;*/
-/*  box-shadow: 0 8px 16px rgba(142, 68, 173, 0.25);*/
-/*  transform: translateY(-2px);*/
-/*}*/
+/* Style for when the user hovers over the button */
+.submit-btn:hover {
+  background-position: right center;
+  box-shadow: 0 8px 16px rgba(142, 68, 173, 0.25);
+  transform: translateY(-2px);
+}
 
-/*!* A subtle effect for when the button is actively being clicked *!*/
-/*.submit-btn:active {*/
-/*  transform: translateY(0px);*/
-/*  box-shadow: 0 4px 8px rgba(142, 68, 173, 0.2);*/
-/*}*/
+/* A subtle effect for when the button is actively being clicked */
+.submit-btn:active {
+  transform: translateY(0px);
+  box-shadow: 0 4px 8px rgba(142, 68, 173, 0.2);
+}

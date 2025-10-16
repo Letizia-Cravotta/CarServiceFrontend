@@ -11,6 +11,7 @@ import {FormsModule} from '@angular/forms';
   standalone: true,
   imports: [CarViewer, CreateCar],
   templateUrl: './app.html',
+  styleUrls: ['./app.css']
 })
 export class App {
     @ViewChild(CarViewer) carViewer!: CarViewer;

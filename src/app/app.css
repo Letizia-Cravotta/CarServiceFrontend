@@ -1,19 +1,19 @@
-/*!* src/app/app.css *!*/
-/*.main-layout {*/
-/*  display: flex;*/
-/*  flex-wrap: wrap;*/
-/*  align-items: flex-start;*/
-/*  gap: 2rem;*/
-/*  padding: 2rem;*/
-/*  max-width: 1400px;*/
-/*  margin: 0 auto; !* This centers the whole layout on the page *!*/
-/*}*/
+/* src/app/app.css */
+.main-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto; /* This centers the whole layout on the page */
+}
 
-/*!**/
-/*  This is the key change. It ensures the custom Angular components*/
-/*  are treated as block-level elements within the flex container,*/
-/*  allowing them to be sized and positioned correctly.*/
-/**!*/
-/*.main-layout > * {*/
-/*  display: block;*/
-/*}*/
+/*
+  This is the key change. It ensures the custom Angular components
+  are treated as block-level elements within the flex container,
+  allowing them to be sized and positioned correctly.
+*/
+.main-layout > * {
+  display: block;
+}
