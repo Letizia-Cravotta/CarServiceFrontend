@@ -1,0 +1,68 @@
+/*!* General container for the car viewer *!*/
+/*:host {*/
+/*  flex: 2 1 400px; !* flex-grow, flex-shrink, flex-basis *!*/
+/*  max-width: 800px;*/
+/*  display: block;*/
+/*  padding: 2rem;*/
+/*  background-color: #ffffff;*/
+/*  border-radius: 16px;*/
+/*  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);*/
+/*  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;*/
+/*}*/
+
+/*!* Main title styling *!*/
+/*h1 {*/
+/*  color: #34495e;*/
+/*  text-align: center;*/
+/*  font-size: 2.5rem;*/
+/*  font-weight: 700;*/
+/*  margin-bottom: 0.5rem;*/
+/*}*/
+
+/*!* Subtitle styling *!*/
+/*h2 {*/
+/*  color: #7f8c8d;*/
+/*  text-align: center;*/
+/*  font-size: 1.25rem;*/
+/*  font-weight: 400;*/
+/*  margin-bottom: 2.5rem;*/
+/*  border-bottom: 1px solid #ecf0f1;*/
+/*  padding-bottom: 1rem;*/
+/*}*/
+
+/*!* Styling for the list container *!*/
+/*ul {*/
+/*  list-style-type: none;*/
+/*  padding: 0;*/
+/*  margin: 0;*/
+/*  display: grid;*/
+/*  gap: 1rem;*/
+/*}*/
+
+/*!* Styling for each car item *!*/
+/*li {*/
+/*  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);*/
+/*  padding: 1.25rem 1.5rem;*/
+/*  border-radius: 12px;*/
+/*  border-left: 6px solid #6a11cb;*/
+/*  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);*/
+/*  transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+/*  color: #333;*/
+/*  font-size: 1.1rem;*/
+/*  font-weight: 500;*/
+/*}*/
+
+/*!* A subtle hover effect to make the list interactive *!*/
+/*li:hover {*/
+/*  transform: translateY(-4px) scale(1.02);*/
+/*  box-shadow: 0 8px 20px rgba(106, 17, 203, 0.2);*/
+/*}*/
+
+/*!* Styling for the empty state message *!*/
+/*ul:empty + li, li:only-child {*/
+/*  background: #f7f9fa;*/
+/*  border-left-color: #bdc3c7;*/
+/*  color: #7f8c8d;*/
+/*  text-align: center;*/
+/*  font-style: italic;*/
+/*}*/

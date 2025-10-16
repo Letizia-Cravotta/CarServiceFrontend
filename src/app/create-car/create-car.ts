@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Output, EventEmitter} from '@angular/core';
 import {Router, RouterModule} from '@angular/router';
 import {ApiService, Car} from '../api';
 import {FormsModule} from '@angular/forms';
@@ -11,6 +11,7 @@ import {FormsModule} from '@angular/forms';
   styleUrls: ['./create-car.css']
 })
 export class CreateCar {
+  @Output() carCreated = new EventEmitter<void>();
   car: Car = {numberOfWheels: 4, color: 'green', brand: 'Toyota'};
 
   constructor(private apiService: ApiService) {
@@ -18,9 +19,9 @@ export class CreateCar {
 
   onSubmit():void {
     this.apiService.createCar(this.car).subscribe({
-      next: () => {
+      next: (createdCar: Car) => {
+        this.carCreated.emit();
         console.log('Car created successfully');
-        //this.router.navigate(['/cars']); // Navigate to the car list view after creation
       },
       error: (err) => console.error('Error creating car:', err)
     });

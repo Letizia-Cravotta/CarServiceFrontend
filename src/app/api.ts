@@ -22,7 +22,7 @@ export class ApiService {
     return this.http.get<Car[]>(this.backendUrl);
   }
 
-  createCar(car: Car): Observable<Object> {
-    return this.http.post<Object>(this.backendUrl, car);
+  createCar(car: Car): Observable<Car> {
+    return this.http.post<Car>(this.backendUrl, car, { responseType: 'json' });
   }
 }
