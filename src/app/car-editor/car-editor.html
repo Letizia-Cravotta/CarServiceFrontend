@@ -1,0 +1,28 @@
+<div class="modal-backdrop" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>Edit Car</h3>
+      <span class="close-btn" (click)="closeModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="brand">Brand:</label>
+          <input type="text" id="brand" [(ngModel)]="editableCar.brand" name="brand" required>
+        </div>
+        <div class="form-group">
+          <label for="color">Color:</label>
+          <input type="text" id="color" [(ngModel)]="editableCar.color" name="color" required>
+        </div>
+        <div class="form-group">
+          <label for="numberOfWheels">Number of Wheels:</label>
+          <input type="number" id="numberOfWheels" [(ngModel)]="editableCar.numberOfWheels" name="numberOfWheels" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="cancel-btn" (click)="closeModal()">Cancel</button>
+          <button type="submit" class="submit-btn">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

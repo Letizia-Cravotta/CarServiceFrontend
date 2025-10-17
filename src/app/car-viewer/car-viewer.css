@@ -1,0 +1,92 @@
+/* General container for the car viewer */
+:host {
+  flex: 2 1 400px; /* flex-grow, flex-shrink, flex-basis */
+  max-width: 800px;
+  display: block;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Main title styling */
+h1 {
+  color: #2c3e50; /* Darker, more professional color */
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitle styling */
+h2 {
+  color: #7f8c8d;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 1rem;
+}
+
+/* Styling for the list container */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Styling for each car item - CLEANER LOOK */
+li {
+  background-color: #f8f9fa; /* Light, clean background */
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e9ecef; /* Subtle border instead of shadow/left-border */
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  color: #34495e; /* Good contrast text color */
+  font-size: 1.05rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* A subtle hover effect to make the list interactive */
+li:hover {
+  transform: translateY(-3px);
+  border-color: #ced4da;
+}
+
+/* Container for the action icons */
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Styling for the edit and delete icons */
+.edit-icon, .delete-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.edit-icon:hover, .delete-icon:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Styling for the empty state message */
+li.empty-state {
+  background: #f8f9fa;
+  border-color: #e9ecef;
+  color: #7f8c8d;
+  text-align: center;
+  font-style: italic;
+  justify-content: center;
+}
