@@ -2,6 +2,9 @@
   <h3>Add a New Car</h3>
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
+      @if (error()) {
+        <div class="form-error" [innerHTML]="error()"></div>
+      }
       <label for="brand">Brand:</label>
       <input type="text" id="brand" [(ngModel)]="car.brand" name="brand" required>
     </div>

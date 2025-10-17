@@ -5,6 +5,9 @@
       <span class="close-btn" (click)="closeModal()">&times;</span>
     </div>
     <div class="modal-body">
+      @if (error()) {
+        <div class="form-error" [innerHTML]="error()"></div>
+      }
       <form (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="brand">Brand:</label>
