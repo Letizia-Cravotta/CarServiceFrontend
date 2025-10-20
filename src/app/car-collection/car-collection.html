@@ -1,0 +1,9 @@
+<div class="main-layout">
+  <div class="header-row">
+    <a routerLink="/" class="home-link" aria-label="Home">
+      <img src="icons/home.jpg" alt="Home" class="home-button" />
+    </a>
+  </div>
+  <car-viewer #carViewer></car-viewer>
+  <create-car (carCreated)="onCarCreated()"></create-car>
+</div>

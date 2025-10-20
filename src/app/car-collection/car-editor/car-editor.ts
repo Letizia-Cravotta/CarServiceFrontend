@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter, inject, OnChanges, SimpleChanges, signal} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {ApiService, Car, extractErrorMessage} from '../api';
+import {ApiService, Car, extractErrorMessage} from '../../api';
 import {CommonModule} from '@angular/common';
 
 @Component({
