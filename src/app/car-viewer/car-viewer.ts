@@ -1,9 +1,10 @@
-import {Component, inject} from '@angular/core';
-import {toSignal} from '@angular/core/rxjs-interop';
-import {ApiService, Car} from '../api';
-import {Subject, startWith, switchMap} from 'rxjs';
-import {CommonModule} from '@angular/common';
-import {CarEditor} from '../car-editor/car-editor'; // Import CarEditor
+import { Component, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ApiService, Car, extractErrorMessage } from '../api';
+import { Subject, of } from 'rxjs';
+import { startWith, switchMap, tap, catchError } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
+import { CarEditor } from '../car-editor/car-editor';
 
 @Component({
   selector: 'car-viewer',
@@ -16,14 +17,28 @@ export class CarViewer {
   title = 'My Car Collection';
   private apiService = inject(ApiService);
 
+  error = signal<string | null>(null);
+
   private refresh$ = new Subject<void>();
 
   backendCars = toSignal(
     this.refresh$.pipe(
       startWith(undefined),
-      switchMap(() => this.apiService.getAllCars())
+      // clear previous error when we attempt a refresh
+      tap(() => this.error.set(null)),
+      switchMap(() =>
+        this.apiService.getAllCars().pipe(
+          // clear error on successful response
+          tap(() => this.error.set(null)),
+          // on error, set a user-friendly message and return an empty array so the UI clears
+          catchError((err: any) => {
+            this.error.set(extractErrorMessage(err));
+            return of([] as Car[]);
+          })
+        )
+      )
     ),
-    {initialValue: []}
+    {initialValue: [] }
   );
 
   // State for managing the edit modal
