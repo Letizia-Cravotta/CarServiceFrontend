@@ -1,23 +1,18 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ApiService } from './api';
-import {CarViewer} from './car-viewer/car-viewer'; // The Message interface is now imported from the service
-import {CreateCar} from './create-car/create-car';
-import {FormsModule} from '@angular/forms';
-
+import { CarViewer } from './car-collection/car-viewer/car-viewer';
+import { CreateCar } from './car-collection/create-car/create-car';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CarViewer, CreateCar],
+  imports: [RouterModule, FormsModule],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
 export class App {
-    @ViewChild(CarViewer) carViewer!: CarViewer;
 
-    onCarCreated(): void {
-        // Refresh the car list when a new car is created
-      this.carViewer.refreshCars();
-    }
 }

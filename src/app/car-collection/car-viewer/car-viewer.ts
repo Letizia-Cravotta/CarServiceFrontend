@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ApiService, Car, extractErrorMessage } from '../api';
+import { ApiService, Car, extractErrorMessage } from '../../api';
 import { Subject, of } from 'rxjs';
 import { startWith, switchMap, tap, catchError } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
@@ -30,9 +30,7 @@ export class CarViewer {
         this.apiService.getAllCars().pipe(
           // clear error on successful response
           tap(() => this.error.set(null)),
-          // on error, set a user-friendly message and return an empty array so the UI clears
           catchError((err: any) => {
-            this.error.set(extractErrorMessage(err));
             return of([] as Car[]);
           })
         )
