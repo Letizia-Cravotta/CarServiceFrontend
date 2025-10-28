@@ -32,7 +32,7 @@ export function extractErrorMessage(error: any): string {
 })
 export class ApiService {
   private http = inject(HttpClient); // Modern dependency injection
-  private backendUrl = 'http://localhost:8080/car';
+  private backendUrl = 'http://192.168.49.2:30752/car';
 
   // This method returns an Observable stream of data
   getAllCars(): Observable<Car[]> {
