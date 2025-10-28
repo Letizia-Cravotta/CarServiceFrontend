@@ -1,0 +1,55 @@
+/* src/app/app.css */
+.main-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto; /* This centers the whole layout on the page */
+}
+
+/*
+  This is the key change. It ensures the custom Angular components
+  are treated as block-level elements within the flex container,
+  allowing them to be sized and positioned correctly.
+*/
+.main-layout > * {
+  display: block;
+}
+
+/* File: src/app/car-collection/car-collection.css */
+/* header with home button */
+.header-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* anchor wrapper keeps routerLink click area predictable */
+.home-link {
+  display: inline-block;
+  line-height: 0; /* remove inline-gap around img */
+  z-index: 10;
+}
+
+/* keep the home image small, block-level and non-overflowing */
+.home-button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.06);
+  background-color: #fff;
+}
+
+/* defensive: ensure images inside this component do not overflow layout */
+:host img {
+  max-width: 100%;
+  height: auto;
+}
+
